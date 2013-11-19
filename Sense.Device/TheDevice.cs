@@ -3,6 +3,8 @@ using Microsoft.SPOT;
 using Microsoft.SPOT.Hardware;
 using SecretLabs.NETMF.Hardware.Netduino;
 
+using Sense.Core;
+
 namespace Sense.Device
 {
     public class TheDevice

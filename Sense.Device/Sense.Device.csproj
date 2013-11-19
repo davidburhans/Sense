@@ -35,14 +35,11 @@
   </PropertyGroup>
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
-    <Compile Include="Display.cs" />
-    <Compile Include="IDisplayProvider.cs" />
-    <Compile Include="IInputProvider.cs" />
     <Compile Include="Motor.cs" />
     <Compile Include="MotorDisplayProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="StringInputProvider.cs" />
+    <Compile Include="StaticInputProvider.cs" />
     <Compile Include="TheDevice.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,5 +51,14 @@
     <Reference Include="SecretLabs.NETMF.Hardware" />
     <Reference Include="SecretLabs.NETMF.Hardware.Netduino" />
     <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="InputProvider\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sense.Core\Sense.Core_micro.csproj">
+      <Project>{42C70BC2-88AB-43EF-9311-7B312C69E1F1}</Project>
+      <Name>Sense.Core_micro</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
