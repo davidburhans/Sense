@@ -4,4 +4,7 @@
     <DeployTransport>USB</DeployTransport>
     <DeployDevice>Netduino</DeployDevice>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DeployDevice />
+  </PropertyGroup>
 </Project>

@@ -53,6 +53,11 @@ namespace Sense.Core
             Width = columns;
         }
 
+        public Display(short rows, short columns, byte[] contents) : this(rows, columns)
+        {            
+            Contents = contents;
+        }
+
         public void Clear()
         {
             _Contents = null;

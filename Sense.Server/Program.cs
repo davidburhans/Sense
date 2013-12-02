@@ -4,28 +4,27 @@ using System.Linq;
 using System.Text;
 using Sense.Server.InputProvider;
 using Sense.Server.DisplayProvider;
+using System.IO.Ports;
+using Sense.Core;
 
 namespace Sense.Server
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
-        {            
-            BrailleInputProvider.CharacterMap.LoadFromFile("Text2Braille.txt");
-            var input = new BrailleInputProvider();
-            input.Text = "This is a test";
+        {
+            var characterMap = new BrailleCharacterMap();
 
-            var displayProvider = new ConsoleDisplayProvider();
-            var display = displayProvider.GetDisplay();
-            var displayContents = input.GetInput();
+            var inputProvider = new CharacterMapInputProvider(characterMap);
+            inputProvider.Text = "abcdefg";
             
-            while (displayContents != null)
-            {
-                display.Contents = displayContents;
-                displayProvider.RenderDisplay();
-                displayContents = input.GetInput();
-                Console.ReadLine();
-            }
+            var displayProvider = new ConsoleDisplayProvider();
+
+            var theDevice = new VirtualDevice(inputProvider, displayProvider);
+            DeviceHarness harness = new DeviceHarness(theDevice);
+
+            harness.Execute();
         }
     }
 }

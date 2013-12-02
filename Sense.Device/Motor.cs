@@ -7,7 +7,7 @@ namespace Sense.Device
 {
     public class Motor
     {
-        public static readonly Cpu.Pin[] motorPins = new Cpu.Pin[] { Pins.GPIO_PIN_D3, Pins.GPIO_PIN_D2, Pins.GPIO_PIN_D1, Pins.GPIO_PIN_D0 };
+        public static readonly Cpu.Pin[] motorPins = new Cpu.Pin[] { Pins.GPIO_PIN_D7, Pins.GPIO_PIN_D6, Pins.GPIO_PIN_D5, Pins.GPIO_PIN_D4, Pins.GPIO_PIN_D3, Pins.GPIO_PIN_D2 };
 
         private static Motor[] _Motors = null;
         public static Motor[] GetMotors()

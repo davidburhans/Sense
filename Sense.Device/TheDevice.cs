@@ -7,13 +7,10 @@ using Sense.Core;
 
 namespace Sense.Device
 {
-    public class TheDevice
-    {
-        private IInputProvider _Input = null;
-        private Display _Display = null;
-
+    public class TheDevice : BaseDevice
+    {        
         private bool _LedStatus = false;
-        public bool LedStatus
+        public override bool LedStatus
         {
             get
             {
@@ -25,7 +22,7 @@ namespace Sense.Device
                 _LedPort.Write(_LedStatus);
             }
         }
-        public bool ButtonStatus
+        public override bool ButtonStatus
         {
             get
             {
@@ -42,43 +39,11 @@ namespace Sense.Device
             _ButtonPort = new InputPort(Pins.ONBOARD_BTN, false, Port.ResistorMode.Disabled);
         }
 
-        public TheDevice(IInputProvider inputProvider, IDisplayProvider displayProvider)
+        public TheDevice(IInputProvider inputProvider, IDisplayProvider displayProvider) : base(inputProvider, displayProvider)
         {
-            _Input = inputProvider;
-            _Display = displayProvider.GetDisplay();            
+
         }
 
-        public void ProcessData()
-        {
-            WriteDataToDisplay(GetDataForOutput());
-        }
-
-        private byte[] GetDataForOutput()
-        {
-            return _Input.GetInput();
-        }
-
-        private void WriteDataToDisplay(byte[] outputData)
-        {
-            _Display.Clear();
-            for(short r = 0; r < _Display.Height; ++r)
-            {
-                int rowOffset = r * _Display.Height;
-                if (rowOffset >= outputData.Length)
-                {
-                    break;
-                }
-                for (short c = 0; c < _Display.Width; ++c )
-                {
-                    int idx = rowOffset + c;
-                    if(idx >= outputData.Length)
-                    {
-                        break;
-                    }
-                    _Display.Write(r, c, outputData[idx] );
-                }                
-            }
-            
-        }
+                
     }
 }

@@ -39,7 +39,6 @@
     <Compile Include="MotorDisplayProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="StaticInputProvider.cs" />
     <Compile Include="TheDevice.cs" />
   </ItemGroup>
   <ItemGroup>

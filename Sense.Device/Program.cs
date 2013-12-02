@@ -6,30 +6,29 @@ using Microsoft.SPOT;
 using Microsoft.SPOT.Hardware;
 using SecretLabs.NETMF.Hardware;
 using SecretLabs.NETMF.Hardware.Netduino;
+using System.IO.Ports;
+using Sense.Core;
 
 namespace Sense.Device
 {
     public class Program
-    {       
-   
+    {
+
+        
         public static void Main()
         {
-            try
-            {
-                var inputProvider = new StaticInputProvider();
-                var displayProvider = new MotorDisplayProvider(Motor.GetMotors());
-                var theDevice = new TheDevice(inputProvider, displayProvider);
+            var characterMap = new BrailleCharacterMap();
 
-                while (true)
-                {
-                    theDevice.ProcessData();
-                    theDevice.LedStatus = theDevice.ButtonStatus;
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.Print(ex.Message);
-            }
+            var inputProvider = new CharacterMapInputProvider(characterMap);
+            inputProvider.Text = "abcdefg";
+
+            var displayProvider = new MotorDisplayProvider(Motor.GetMotors());
+            var theDevice = new TheDevice(inputProvider, displayProvider);
+
+            DeviceHarness harness = new DeviceHarness(theDevice);
+
+            harness.Execute();
+            
         }
 
     }
