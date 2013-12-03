@@ -26,6 +26,7 @@
     <Compile Include="BaseDevice.cs" />
     <Compile Include="CharacterMap.cs" />
     <Compile Include="CharacterMapInputProvider.cs" />
+    <Compile Include="CyclicInputProvider.cs" />
     <Compile Include="DeviceHarness.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="ICharacterMap.cs" />
