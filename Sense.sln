@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sense.Device", "Sense.Device\Sense.Device.csproj", "{E3089946-8A70-4E4A-BF40-493A330D9F21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sense.Head", "Sense.Head\Sense.Head.csproj", "{E3089946-8A70-4E4A-BF40-493A330D9F21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sense.Server", "Sense.Server\Sense.Server.csproj", "{D55E2527-9F79-438A-8DAF-DDDBB8F6DA84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sense.SkullSaw", "Sense.SkullSaw\Sense.SkullSaw.csproj", "{D55E2527-9F79-438A-8DAF-DDDBB8F6DA84}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sense.Core", "Sense.Core\Sense.Core.csproj", "{1D7B33CC-9DF5-4517-9A9F-46A9E0480602}"
 EndProject

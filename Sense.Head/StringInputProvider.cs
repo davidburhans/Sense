@@ -1,11 +1,11 @@
 using System;
-using Sense.Core;
+using Microsoft.SPOT;
 
 namespace Sense.Head
 {
     public class StaticInputProvider : IInputProvider
     {
-        static public byte[] Input = new byte[]{100,100,100,100,100,100};
+        static public byte[] Input = new byte[] { 0, 0x77, 0xff };
 
         public byte[] GetInput()
         {

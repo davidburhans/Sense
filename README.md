@@ -38,4 +38,4 @@ This prototype is being written using the .Net Micro Framework v4.2 and Visual S
 
 Eventually, I plan on turning this into a management suite for the Sensé device. This way, you can have a whole suite of sensor data being translated and sent to different Sensé devices. 
 
-[david burhans]: github.com/davidburhans
+[david burhans]: github.com/davidburhans/Sense
